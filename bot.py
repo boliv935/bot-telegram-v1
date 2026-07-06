@@ -20,7 +20,7 @@ MENU_IMAGE_URL = "https://picsum.photos/500/500?random=2"   # Image du menu cata
 # --- 1. FONCTION DE RÉUTILISATION DU MENU PRINCIPAL ---
 def get_main_menu_keyboard():
     builder = InlineKeyboardBuilder()
-    builder.button(text="Contact + Payment Information 🇪🇸 💵", callback_data="menu_contact")
+    builder.button(text="Contact + Payment Information 🇫🇷 💵", callback_data="menu_contact")
     builder.button(text="Cali Flower 🇺🇸 Stock in Europe 🇪🇺", callback_data="menu_cali")
     builder.button(text="Spanish Flower 🇪🇸 Stock in Europe 🇪🇺", callback_data="menu_spanish")
     builder.button(text="Hash / Dry Stock in Europe 🇪🇺", callback_data="menu_hash")
@@ -31,10 +31,10 @@ def get_main_menu_keyboard():
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     builder = InlineKeyboardBuilder()
-    builder.button(text="Access the Menu 📋", callback_data="trigger_captcha")
+    builder.button(text="Access Menu 📋", callback_data="trigger_captcha")
     
     welcome_text = (
-        "🇪🇸 **GAS STATION By CALI GAS ⛽ ** 🌐\n\n"
+        "🇫🇷 **GAS STATION By CALI GAS⛽ ** 🌐\n\n"
         "⚪ **Telegram**: @VotreContactPlug\n"
         "⚪ **Threema**: 377Z6UAA\n"
         "⚪ **More Info**: Linktr.ee/votrelien\n\n"
