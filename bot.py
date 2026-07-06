@@ -36,7 +36,7 @@ async def cmd_start(message: types.Message):
     welcome_text = (
         "🇫🇷 **GAS STATION By CALI GAS⛽ ** 🌐\n\n"
         "⚪ **Telegram**: @Caligass\n"
-        "⚪ **WhatsApp**: 377Z6UAA\n"
+        "⚪ **WhatsApp**: +33746407167\n"
         "⚪ **More Info**: Linktr.ee/votrelien\n\n"
         "📱 **MENU TOUJOUR A JOUR ✔️!**\n"
         "📝"
@@ -93,7 +93,7 @@ async def process_back_to_menu(callback: types.CallbackQuery):
     # Renvoie le menu catalogue proprement
     await callback.message.answer_photo(
         photo=MENU_IMAGE_URL,
-        caption="Welcome to the Official Menu! Choose an option below:",
+        caption="Bienvenue dans la Gas Station⛽⚡ ! :",
         reply_markup=get_main_menu_keyboard()
     )
     await callback.answer()
@@ -106,9 +106,9 @@ async def process_contact(callback: types.CallbackQuery):
     text = (
         "**CONTACT + PAYMENT INFO** 🇪🇺 💵\n\n"
         "**HOW TO CONTACT** 📱:\n"
-        "• Telegram: @VotreContactPlug\n\n"
+        "• Telegram: @Caligass\n\n"
         "**PAYMENT METHODS**:\n"
-        "- CRYPTO: BTC, USDT, LTC\n"
+        "-PAIEMENT EN ESPÈCE💵\n- CRYPTO:BTC\n"
     )
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu") # Bouton Retour
@@ -131,7 +131,7 @@ async def process_cali(callback: types.CallbackQuery):
 async def process_spanish(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**SPANISH FLOWER 🇪🇸**\n\n• 10g = 80€\n• 50g = 300€"
+    text = "**Amnésia Haze🇪🇸**\n\n• 10g = 80€\n• 50g = 300€"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
