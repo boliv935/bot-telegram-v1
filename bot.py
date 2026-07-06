@@ -15,7 +15,7 @@ CAPTCHA_WORDS = ["static", "dry", "frozen", "mousse"]
 
 # Liens d'images (Remplacez par vos propres URL directes de photos)
 LOGO_WELCOME_URL = "https://i.ibb.co/DTJRnM7/Gemini-Generated-Image-5q51bn5q51bn5q51.png" # Image d'accueil (image_2.png)
-MENU_IMAGE_URL = "https://picsum.photos/500/500?random=2"   # Image du menu catalogue (image_4.png)
+MENU_IMAGE_URL = "https://i.ibb.co/Mxq7cQ0s/Gemini-Generated-Image-9necwx9necwx9nec.png"   # Image du menu catalogue (image_4.png)
 
 # --- 1. FONCTION DE RÉUTILISATION DU MENU PRINCIPAL ---
 def get_main_menu_keyboard():
@@ -80,7 +80,7 @@ async def process_good_captcha(callback: types.CallbackQuery):
     
     await callback.message.answer_photo(
         photo=MENU_IMAGE_URL,
-        caption="Welcome to the Official Menu! Choose an option below:",
+        caption="Bienvenue dans la Gas Station⛽⚡ ! :",
         reply_markup=get_main_menu_keyboard()
     )
     await callback.answer()
