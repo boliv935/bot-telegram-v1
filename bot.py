@@ -14,7 +14,7 @@ dp = Dispatcher()
 CAPTCHA_WORDS = ["static", "dry", "frozen", "mousse"]
 
 # Liens d'images (Remplacez par vos propres URL directes de photos)
-LOGO_WELCOME_URL = "https://picsum.photos/500/500?random=1" # Image d'accueil (image_2.png)
+LOGO_WELCOME_URL = "https://i.postimg.cc/HsP95ByG/Gemini-Generated-Image.png" # Image d'accueil (image_2.png)
 MENU_IMAGE_URL = "https://picsum.photos/500/500?random=2"   # Image du menu catalogue (image_4.png)
 
 # --- 1. FONCTION DE RÉUTILISATION DU MENU PRINCIPAL ---
