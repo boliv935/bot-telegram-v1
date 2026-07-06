@@ -21,9 +21,9 @@ MENU_IMAGE_URL = "https://picsum.photos/500/500?random=2"   # Image du menu cata
 def get_main_menu_keyboard():
     builder = InlineKeyboardBuilder()
     builder.button(text="Contact 🇫🇷 💵", callback_data="menu_contact")
-    builder.button(text="Cali Flower 🇺🇸 Stock in Europe 🇪🇺", callback_data="menu_cali")
-    builder.button(text="Spanish Flower 🇪🇸 Stock in Europe 🇪🇺", callback_data="menu_spanish")
-    builder.button(text="Hash / Dry Stock in Europe 🇪🇺", callback_data="menu_hash")
+    builder.button(text="Cali US / Cali Spain 🇺🇸🇪🇸", callback_data="menu_cali")
+    builder.button(text="TOP Haze 🇳🇱 ! ", callback_data="menu_spanish")
+    builder.button(text="Hash / Dry🇲🇦🇺🇸", callback_data="menu_hash")
     builder.adjust(1) # 1 bouton par ligne
     return builder.as_markup()
 
