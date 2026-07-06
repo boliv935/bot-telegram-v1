@@ -34,11 +34,11 @@ async def cmd_start(message: types.Message):
     builder.button(text="Access the Menu 📋", callback_data="trigger_captcha")
     
     welcome_text = (
-        "🇪🇸 **FILTERED KINGS MENU OFFICIAL** 🌐\n\n"
+        "🇪🇸 **GAS STATION By CALI GAS ⛽ ** 🌐\n\n"
         "⚪ **Telegram**: @VotreContactPlug\n"
         "⚪ **Threema**: 377Z6UAA\n"
         "⚪ **More Info**: Linktr.ee/votrelien\n\n"
-        "📱 **MENU ALWAYS UP TO DATE!**\n"
+        "📱 **MENU TOUJOUR A JOUR ✔️!**\n"
         "📝"
     )
     await message.answer_photo(
