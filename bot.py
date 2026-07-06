@@ -10,20 +10,29 @@ TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
+# Liste des mots du captcha
 CAPTCHA_WORDS = ["static", "dry", "frozen", "mousse"]
-MENU_IMAGE_URL = "https://picsum.photos/500/500"  # Image du catalogue de produits
 
-# Mettez ici le lien internet direct de votre logo (comme sur image_2.png)
-LOGO_WELCOME_URL = "https://picsum.photos/500/500" 
+# Liens d'images (Remplacez par vos propres URL directes de photos)
+LOGO_WELCOME_URL = "https://picsum.photos/500/500?random=1" # Image d'accueil (image_2.png)
+MENU_IMAGE_URL = "https://picsum.photos/500/500?random=2"   # Image du menu catalogue (image_4.png)
 
-# 1. Dès que l'utilisateur fait /start -> On affiche l'image_2.png
+# --- 1. FONCTION DE RÉUTILISATION DU MENU PRINCIPAL ---
+def get_main_menu_keyboard():
+    builder = InlineKeyboardBuilder()
+    builder.button(text="Contact + Payment Information 🇪🇸 💵", callback_data="menu_contact")
+    builder.button(text="Cali Flower 🇺🇸 Stock in Europe 🇪🇺", callback_data="menu_cali")
+    builder.button(text="Spanish Flower 🇪🇸 Stock in Europe 🇪🇺", callback_data="menu_spanish")
+    builder.button(text="Hash / Dry Stock in Europe 🇪🇺", callback_data="menu_hash")
+    builder.adjust(1) # 1 bouton par ligne
+    return builder.as_markup()
+
+# --- 2. ACCUEIL PRINCIPAL (Dès que l'utilisateur fait /start) ---
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    # Construction du bouton unique sous la présentation
     builder = InlineKeyboardBuilder()
     builder.button(text="Access the Menu 📋", callback_data="trigger_captcha")
     
-    # Texte de présentation identique à l'image_2.png
     welcome_text = (
         "🇪🇸 **FILTERED KINGS MENU OFFICIAL** 🌐\n\n"
         "⚪ **Telegram**: @VotreContactPlug\n"
@@ -32,7 +41,6 @@ async def cmd_start(message: types.Message):
         "📱 **MENU ALWAYS UP TO DATE!**\n"
         "📝"
     )
-    
     await message.answer_photo(
         photo=LOGO_WELCOME_URL,
         caption=welcome_text,
@@ -40,11 +48,10 @@ async def cmd_start(message: types.Message):
         parse_mode="Markdown"
     )
 
-# 2. Quand l'utilisateur clique sur "Access the Menu 📋" -> On lance le Captcha
+# --- 3. LANCEMENT DU CAPTCHA (Après clic sur "Access the Menu 📋") ---
 @dp.callback_query(F.data == "trigger_captcha")
 async def start_captcha(callback: types.CallbackQuery):
-    # Optionnel : supprime le message de bienvenue pour nettoyer le chat
-    await callback.message.delete()
+    await callback.message.delete() # On efface l'accueil pour afficher le captcha
     
     correct_word = random.choice(CAPTCHA_WORDS)
     buttons_words = CAPTCHA_WORDS.copy()
@@ -61,44 +68,91 @@ async def start_captcha(callback: types.CallbackQuery):
     await callback.message.answer(text, reply_markup=builder.as_markup(), parse_mode="Markdown")
     await callback.answer()
 
-# 3. Mauvais mot cliqué
+# --- 4. GESTION DU MAUVAIS MOT ---
 @dp.callback_query(F.data == "captcha_bad")
 async def process_bad_captcha(callback: types.CallbackQuery):
     await callback.answer("❌ Mauvais choix ! Réessayez avec /start", show_alert=True)
 
-# 4. Bon mot cliqué -> On affiche la vitrine de produits
+# --- 5. GESTION DU BON MOT (Affichage de la vitrine catalogue) ---
 @dp.callback_query(F.data == "captcha_good")
 async def process_good_captcha(callback: types.CallbackQuery):
-    await callback.message.delete()
-    
-    builder = InlineKeyboardBuilder()
-    builder.button(text="Contact + Payment Information 🇪🇸 💵", callback_data="menu_contact")
-    builder.button(text="Cali Flower 🇺🇸 Stock in Europe 🇪🇺", callback_data="menu_cali")
-    builder.button(text="Spanish Flower 🇪🇸 Stock in Europe 🇪🇺", callback_data="menu_spanish")
-    builder.button(text="Hash / Dry Stock in Europe 🇪🇺", callback_data="menu_hash")
-    builder.adjust(1)
+    await callback.message.delete() # On efface le captcha réussi
     
     await callback.message.answer_photo(
         photo=MENU_IMAGE_URL,
         caption="Welcome to the Official Menu! Choose an option below:",
-        reply_markup=builder.as_markup()
+        reply_markup=get_main_menu_keyboard()
     )
+    await callback.answer()
 
+# --- 6. ACTION DU BOUTON RETOUR (Revient à la vitrine catalogue) ---
+@dp.callback_query(F.data == "go_to_menu")
+async def process_back_to_menu(callback: types.CallbackQuery):
+    await callback.message.delete() # Supprime la fiche produit actuelle
+    
+    # Renvoie le menu catalogue proprement
+    await callback.message.answer_photo(
+        photo=MENU_IMAGE_URL,
+        caption="Welcome to the Official Menu! Choose an option below:",
+        reply_markup=get_main_menu_keyboard()
+    )
+    await callback.answer()
+
+# --- 7. LES FICHES PRODUITS (Chacune intègre le bouton Retour) ---
 @dp.callback_query(F.data == "menu_contact")
 async def process_contact(callback: types.CallbackQuery):
-    contact_text = (
+    await callback.message.delete()
+    
+    text = (
         "**CONTACT + PAYMENT INFO** 🇪🇺 💵\n\n"
         "**HOW TO CONTACT** 📱:\n"
         "• Telegram: @VotreContactPlug\n\n"
         "**PAYMENT METHODS**:\n"
         "- CRYPTO: BTC, USDT, LTC\n"
     )
-    await callback.message.answer(contact_text, parse_mode="Markdown")
+    builder = InlineKeyboardBuilder()
+    builder.button(text="🔙 Back", callback_data="go_to_menu") # Bouton Retour
+    
+    await callback.message.answer(text, reply_markup=builder.as_markup(), parse_mode="Markdown")
     await callback.answer()
 
-# Serveur web pour l'offre Render Free
+@dp.callback_query(F.data == "menu_cali")
+async def process_cali(callback: types.CallbackQuery):
+    await callback.message.delete()
+    
+    text = "**CALI FLOWER 🇺🇸**\n\n• 5g = 70€\n• 10g = 130€"
+    builder = InlineKeyboardBuilder()
+    builder.button(text="🔙 Back", callback_data="go_to_menu")
+    
+    await callback.message.answer(text, reply_markup=builder.as_markup(), parse_mode="Markdown")
+    await callback.answer()
+
+@dp.callback_query(F.data == "menu_spanish")
+async def process_spanish(callback: types.CallbackQuery):
+    await callback.message.delete()
+    
+    text = "**SPANISH FLOWER 🇪🇸**\n\n• 10g = 80€\n• 50g = 300€"
+    builder = InlineKeyboardBuilder()
+    builder.button(text="🔙 Back", callback_data="go_to_menu")
+    
+    await callback.message.answer(text, reply_markup=builder.as_markup(), parse_mode="Markdown")
+    await callback.answer()
+
+@dp.callback_query(F.data == "menu_hash")
+async def process_hash(callback: types.CallbackQuery):
+    await callback.message.delete()
+    
+    text = "**HASH / DRY SIFT 🇪🇺**\n\n• 10g = 90€\n• 50g = 350€"
+    builder = InlineKeyboardBuilder()
+    builder.button(text="🔙 Back", callback_data="go_to_menu")
+    
+    await callback.message.answer(text, reply_markup=builder.as_markup(), parse_mode="Markdown")
+    await callback.answer()
+
+
+# --- 8. SERVEUR WEB POUR RENDER FREE ---
 async def handle(request):
-    return web.Response(text="Bot runs perfectly!")
+    return web.Response(text="Bot is running!")
 
 async def main():
     app = web.Application()
