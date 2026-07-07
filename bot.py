@@ -121,7 +121,7 @@ async def process_contact(callback: types.CallbackQuery):
 async def process_cali(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**CALI SPAIN🇪🇸🇺🇸*\nAU MEET-UP🏠\n\n•1,2g = 10€\n• 10g = 130€\n\nEN LIVRAISON \n\n•1,2g = 10€\n• 10g = 130€
+    text = "**CALI SPAIN🇪🇸🇺🇸*\nAU MEET-UP🏠\n\n•1,2g = 10€\n• 10g = 130€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
@@ -132,7 +132,7 @@ async def process_cali(callback: types.CallbackQuery):
 async def process_spanish(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**Amnésia Haze🇪🇸**\n AU MEET-UP🏠n\n 1g = 5€\n• 7g = 30€"
+    text = "**Amnésia Haze🇪🇸**\n AU MEET-UP🏠n\n 1g = 5€\n• 7g = 30€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
@@ -143,7 +143,7 @@ async def process_spanish(callback: types.CallbackQuery):
 async def process_hash(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**TOP MOUSSEUX🇲🇦**\nAU MEET-UP🏠n\n• 2g = 5€\n• 4g = 10€"
+    text = "**TOP MOUSSEUX🇲🇦**\nAU MEET-UP🏠n\n• 2g = 5€\n• 4g = 10€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
