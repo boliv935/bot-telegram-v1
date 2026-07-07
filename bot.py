@@ -20,7 +20,7 @@ MENU_IMAGE_URL = "https://i.ibb.co/Mxq7cQ0s/Gemini-Generated-Image-9necwx9necwx9
 # --- 1. FONCTION DE RÉUTILISATION DU MENU PRINCIPAL ---
 def get_main_menu_keyboard():
     builder = InlineKeyboardBuilder()
-    builder.button(text="Contact 🇫🇷 💵", callback_data="menu_contact")
+    builder.button(text="Contact+Information 🇫🇷 💵", callback_data="menu_contact")
     builder.button(text="Cali US / Cali Spain 🇺🇸🇪🇸", callback_data="menu_cali")
     builder.button(text="TOP Haze 🇳🇱 ! ", callback_data="menu_spanish")
     builder.button(text="Hash / Dry🇲🇦🇺🇸", callback_data="menu_hash")
@@ -105,7 +105,7 @@ async def process_contact(callback: types.CallbackQuery):
     
     text = (
         "**CONTACT + PAYMENT INFO** 🇪🇺 💵\n\n"
-        "**HOW TO CONTACT** 📱:\n"
+        "**Comment nous contactez ?** 📱:\n"
         "• Telegram: @Caligass\n\n"
         "• WhatsApp: +33746407167\n"
         "**PAYMENT METHODS**:\n"
@@ -121,7 +121,7 @@ async def process_contact(callback: types.CallbackQuery):
 async def process_cali(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**CALI SPAIN 🇺🇸**\nAU MEET-UP🏠\n\n•1,2g = 10€\n• 10g = 130€"
+    text = "**CALI SPAIN🇪🇸🇺🇸*\nAU MEET-UP🏠\n\n•1,2g = 10€\n• 10g = 130€\n\nEN LIVRAISON \n\n•1,2g = 10€\n• 10g = 130€
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
