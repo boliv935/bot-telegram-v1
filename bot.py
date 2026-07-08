@@ -36,7 +36,7 @@ async def cmd_start(message: types.Message):
     welcome_text = (
         "🇫🇷 **GAS STATION By CALI GAS⛽ ** 🌐\n\n"
         "⚪ **Telegram**: @Caligass\n"
-        "⚪ **WhatsApp**: [+33746407167](https://wa.me/33746407167?text=Hello%20Cali%20Gas%2093%20!%20C'est%20mon%20premier%20contact%20.%0A%0A%F0%9F%94%92%20PROFIL%20CLIENT%20%3A%0A*%20Mon%20Pr%C3%A9nom%20%2F%20Pseudo%20%3A%20%5B%20...%20%5D%0A*%20%C3%82ge%20%3A%20%5B%20...%20%5D%0A*%20Ville%20%2F%20Zone%20actuelle%20%3A%20%5B%20Ex%3A%20Amsterdam%20%2F%20La%20Haye%20%5D%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20%3A)\n"
+        "⚪ **WhatsApp**: [+33746407167](https://wa.me/33746407167?text=Hello%20Cali%20Gas%2093%20!%20C'est%20mon%20premier%20contact%20.%0A%0A%F0%9F%94%92%20PROFIL%20CLIENT%20%3A%0A*%20Mon%20Pr%C3%A9nom%20%2F%20Pseudo%20%3A%20%5B%20...%20%5D%0A*%20%C3%82ge%20%3A%20%5B%20...%20%5D%0A*%20Ville%20%2F%20Zone%20actuelle%20%3A%20%5B%20Ex%3A%20Paris%2018%20%2F%20Bondy%20Sud%20%5D%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20%3A)\n"
         "⚪ **More Info**: Linktr.ee/CaliGas99\n\n"
         "📱 **MENU TOUJOUR A JOUR ✔️!**\n"
         "📝"
