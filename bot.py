@@ -36,7 +36,7 @@ async def cmd_start(message: types.Message):
     welcome_text = (
         "🇫🇷 **GAS STATION By CALI GAS⛽ ** 🌐\n\n"
         "⚪ **Telegram**: @Caligass\n"
-        "⚪ **WhatsApp**: +33746407167\n"
+        "⚪ **WhatsApp**: [+33746407167](https://wa.me/33746407167?text=Hello%20Cali%20Gas%2093%20!%20C'est%20mon%20premier%20contact%20via%20le%20canal.%0A)\n"
         "⚪ **More Info**: Linktr.ee/CaliGas99\n\n"
         "📱 **MENU TOUJOUR A JOUR ✔️!**\n"
         "📝"
@@ -93,7 +93,7 @@ async def process_back_to_menu(callback: types.CallbackQuery):
     # Renvoie le menu catalogue proprement
     await callback.message.answer_photo(
         photo=MENU_IMAGE_URL,
-        caption="Bienvenue dans la Gas Station⛽⚡ ! :",
+        caption="Bienvenue dans la Gas Station⛽⚡!",
         reply_markup=get_main_menu_keyboard()
     )
     await callback.answer()
