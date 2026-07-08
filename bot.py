@@ -105,11 +105,15 @@ async def process_contact(callback: types.CallbackQuery):
     
     text = (
         "**CONTACT + PAYMENT INFO** 🇪🇺 💵\n\n"
+         " • Canal POTATO: \n"
+         " • Canal Telegram: \n"
+         " • Canal MEET-UP: \n"
         "**Comment nous contactez ?** 📱:\n"
-        "• Telegram: @Caligass\n\n"
+        "• Telegram: @Caligass\n"
         "• WhatsApp: +33746407167\n"
+        "• Signal: @Caligass\n"
         "**PAYMENT METHODS**:\n"
-        "-PAIEMENT EN ESPÈCE💵\n- CRYPTO:BTC\n"
+        "-PAIEMENT EN ESPÈCE💵\n-BTC\n"
     )
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu") # Bouton Retour
