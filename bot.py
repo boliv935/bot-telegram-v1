@@ -125,7 +125,7 @@ async def process_contact(callback: types.CallbackQuery):
 async def process_cali(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**CALI SPAIN🇪🇸🇺🇸*\nAU MEET-UP🏠\n\n•1,2g = 10€\n• 10g = 130€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€"
+    text = "**CALI SPAIN🇪🇸🇺🇸**\nAU MEET-UP🏠\n\n•1,2g = 10€\n• 10g = 130€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
