@@ -80,7 +80,7 @@ async def process_good_captcha(callback: types.CallbackQuery):
     
     await callback.message.answer_photo(
         photo=MENU_IMAGE_URL,
-        caption="Bienvenue dans la Gas Station⛽⚡! :",
+        caption="Bienvenue dans la Gas Station⛽⚡!",
         reply_markup=get_main_menu_keyboard()
     )
     await callback.answer()
