@@ -136,7 +136,7 @@ async def process_cali(callback: types.CallbackQuery):
 async def process_spanish(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**Amnésia Haze🇪🇸**\n AU MEET-UP🏠n\n 1g = 5€\n• 7g = 30€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
+    text = "**Amnésia Haze🇪🇸**\n AU MEET-UP🏠n\n 1g = 5€\n• 7g = 30€\n\nEN LIVRAISON🛵🛴\n\n•5g = 30€\n• 20g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
@@ -147,7 +147,7 @@ async def process_spanish(callback: types.CallbackQuery):
 async def process_hash(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**TOP MOUSSEUX🇲🇦**\nAU MEET-UP🏠n\n• 2g = 5€\n• 4g = 10€\n\nEN LIVRAISON🛵🛴\n\n•1,2g = 10€\n• 10g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
+    text = "**TOP MOUSSEUX🇲🇦**\nAU MEET-UP🏠n\n• 1,5g = 5€\n• 4g = 10€\n\nEN LIVRAISON🛵🛴\n\n•11g = 50€\n• 25g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
