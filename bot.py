@@ -35,8 +35,8 @@ async def cmd_start(message: types.Message):
     
     welcome_text = (
         "🇫🇷 **GAS STATION By CALI GAS⛽ ** 🌐\n\n"
-        "⚪ **Telegram**: @Caligass\n"
-        "⚪ **WhatsApp**: [+33746407167](https://wa.me/33746407167?text=Hello%20Cali%20Gas%2093%20!%20C'est%20mon%20premier%20contact%20.%0A%0A%F0%9F%94%92%20PROFIL%20CLIENT%20%3A%0A*%20Mon%20Pr%C3%A9nom%20%2F%20Pseudo%20%3A%20%5B%20...%20%5D%0A*%20%C3%82ge%20%3A%20%5B%20...%20%5D%0A*%20Ville%20%2F%20Zone%20actuelle%20%3A%20%5B%20Ex%3A%20Paris%2018%20%2F%20Bondy%20Sud%20%5D%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20%3A)\n"
+        "⚪ **Telegram**: @Caligass\n\n"
+        "⚪ **WhatsApp**: [+33746407167](https://wa.me/33746407167?text=Hello%20Cali%20Gas%2093%20!%20C'est%20mon%20premier%20contact%20.%0A%0A%F0%9F%94%92%20PROFIL%20CLIENT%20%3A%0A*%20Mon%20Pr%C3%A9nom%20%2F%20Pseudo%20%3A%20%5B%20...%20%5D%0A*%20%C3%82ge%20%3A%20%5B%20...%20%5D%0A*%20Ville%20%2F%20Zone%20actuelle%20%3A%20%5B%20Ex%3A%20Paris%2018%20%2F%20Bondy%20Sud%20%5D%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20%3A)\n\n"
         "⚪ **More Info**: Linktr.ee/CaliGas99\n\n"
         "📱 **MENU TOUJOUR A JOUR ✔️!**\n"
         "📝"
@@ -105,14 +105,14 @@ async def process_contact(callback: types.CallbackQuery):
     
     text = (
         "**CONTACT + PAYMENT INFO** 🇪🇺 💵\n\n"
-         " • Canal POTATO: \n"
-         " • Canal Telegram: \n"
-         " • Canal MEET-UP: \n"
+         " • Canal POTATO:https://tato.im/joinchat/FPLiwK56Oj1M7ILFy_YKKQ \n"
+         " • Canal Telegram:https://t.me/+8SZbwzuWphRkNzQ8 \n"
+         " • Canal MEET-UP:https://t.me/+thUPx8PSwLYwYTc0 \n\n"
         "**Comment nous contactez ?** 📱:\n"
         "• Telegram: @Caligass\n"
         "• WhatsApp: +33746407167\n"
-        "• Signal: @Caligass\n"
-        "**PAYMENT METHODS**:\n"
+        "• Signal: \n\n"
+        "**Mode de Paiement**:\n"
         "-PAIEMENT EN ESPÈCE💵\n-BTC\n"
     )
     builder = InlineKeyboardBuilder()
@@ -136,7 +136,7 @@ async def process_cali(callback: types.CallbackQuery):
 async def process_spanish(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**Amnésia Haze🇪🇸**\n AU MEET-UP🏠n\n 1g = 5€\n• 7g = 30€\n\nEN LIVRAISON🛵🛴\n\n•5g = 30€\n• 20g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
+    text = "**Amnésia Haze🇪🇸**\n AU MEET-UP🏠n\n 1g = 5€\n• 7g = 30€\n\nEN LIVRAISON🛵🛴\n\n•5g = 30€\n• 21g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
