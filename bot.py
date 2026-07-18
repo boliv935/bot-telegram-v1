@@ -105,9 +105,9 @@ async def process_contact(callback: types.CallbackQuery):
     
     text = (
         "**CONTACT + PAYMENT INFO** 🇪🇺 💵\n\n"
-         " • Canal POTATO:https://tato.im/joinchat/FPLiwK56Oj1M7ILFy_YKKQ \n"
-         " • Canal Telegram:https://t.me/+8SZbwzuWphRkNzQ8 \n"
-         " • Canal MEET-UP:https://t.me/+thUPx8PSwLYwYTc0 \n\n"
+         " • Canal POTATO:https://tato.im/joinchat/FPLiwK56Oj1M7ILFy_YKKQ\n"
+         " • Canal Telegram:https://t.me/+8SZbwzuWphRkNzQ8\n"
+         " • Canal MEET-UP:https://t.me/+thUPx8PSwLYwYTc0\n\n"
         "**Comment nous contactez ?** 📱:\n"
         "• Telegram: @Caligass\n"
         "• WhatsApp: +33746407167\n"
