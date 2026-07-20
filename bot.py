@@ -125,7 +125,7 @@ async def process_contact(callback: types.CallbackQuery):
 async def process_cali(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**CALI SPAIN🇪🇸🇺🇸**\n\n⬇️AU MEET-UP🏠\n•1,2g = 10€\n• 10g = 90€\n\n⬇️EN LIVRAISON🛵🛴\n•3,5g = 30€\n• 6,5g = 50€\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)  "
+    text = "**CALI SPAIN🇪🇸🇺🇸**\n\n⬇️AU MEET-UP🏠\n•1,2g = 10€\n• 10g = 90€\n⬇️EN LIVRAISON🛵🛴\n•3,5g = 30€\n• 6,5g = 50€\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)  "
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
@@ -147,7 +147,7 @@ async def process_spanish(callback: types.CallbackQuery):
 async def process_hash(callback: types.CallbackQuery):
     await callback.message.delete()
     
-    text = "**TOP MOUSSEUX🇲🇦**\n\n⬇️AU MEET-UP🏠\n• 1,5g = 5€\n• 4g = 10€\n\n⬇️EN LIVRAISON🛵🛴\n•11g = 50€\n• 25g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
+    text = "**TOP MOUSSEUX🇲🇦**\n\n⬇️AU MEET-UP🏠\n• 1,5g = 5€\n• 4g = 10€\n⬇️EN LIVRAISON🛵🛴\n•11g = 50€\n• 25g = 130€\n\nPrise de commande📲:\n[WhatsApp☎️](https://wa.me/33746407167)"
     builder = InlineKeyboardBuilder()
     builder.button(text="🔙 Back", callback_data="go_to_menu")
     
